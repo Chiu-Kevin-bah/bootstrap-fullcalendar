@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap-FullCalendar</title>
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/Ionicons/css/ionicons.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/jt.timepicker/jquery.timepicker.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.fullcalendar.css">
+
+		<style type="text/css">
+
+		</style>
+
+
+		<script src="assets/moment/min/moment-with-locales.min.js"></script>
+		<script src="assets/jquery/dist/jquery.min.js"></script>
+	</head>
+	<body style="padding-top:50px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="calendar" class="fullcalendar"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="assets/jt.timepicker/jquery.timepicker.min.js"></script>
+		<script src="assets/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script src="js/bootstrap.fullcalendar.js"></script>
+		<script type="text/javascript">
+			var $calendar = $('#calendar');
+
+			$calendar.fullCalendar({
+				buttonClass: 'btn-primary',
+
+				popup: {
+					form: {
+						'Service': '<select class="form-control" name="serviceID"></select>',
+						'Event Time': '<input type="text" class="form-control timepicker" name="eventStart" />',
+						'Message': '<textarea class="form-control" name="clientNote"></textarea>'
+					},
+
+					sources: {
+						serviceID: {
+							url: '/api/services',
+							keys: {
+								value: 'id',
+								text: 'service',
+								selected: ''
+							},
+
+							data: {
+
+							}
+						}
+					},
+
+					save: function($popup) {
+						console.log('save', $popup);
+						return false;
+					},
+
+					show: function() {
+						console.log('show');
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-fullcalendar",
+  "homepage": "http://mochadevelopment.com",
+  "authors": [
+    "chiukk1@gmail.com"
+  ],
+  "description": "Bootstrap 3 Extension for FullCalendar",
+  "main": "js/bootstrap-fullcalendar.js",
+  "moduleType": [],
+  "keywords": [
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "jt.timepicker": "jquery-timepicker-jt#~1.8.8",
+    "fullcalendar": "~2.5.0",
+    "Ionicons": "ionicons#~2.0.1"
+  }
+}
